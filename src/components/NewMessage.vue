@@ -10,7 +10,7 @@
 </div>
 
     
-</template>
+</template>nr
 
 <script>
 import db from "@/firebase/init";
