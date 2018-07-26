@@ -3,7 +3,7 @@
 
     <form @submit.prevent="addMessage">
         <label for="new-message">New Message to add:</label>
-        <input type="text" name="new-message" v-model="newMessage">
+        <input type="text" name="new-message" v-model="newMessage" v-focus>
         <p v-if="feedback" class="red-text">{{feedback}}</p>
     </form>
 
@@ -43,9 +43,17 @@ export default {
           }
         }
     }
-
-
+    ,
+    directives: {
+        focus: {
+        // définition de la directive
+            inserted: function (el) {
+             el.focus()
+            }
+        }
+    }
 }
+
 </script>
 
 <style>
